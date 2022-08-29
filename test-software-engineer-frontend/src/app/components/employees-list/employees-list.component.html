@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <div class="card mb-3 ">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            employees
+        </div>
+        <div class="card-body">
+
+                    <div class="input-group mb-3">                       
+                        <input type="text"  [(ngModel)]="idEmployee" (change)="getEmployee($event)" class="form-control"  placeholder="Filter By Id"  aria-label="Example text with button addon" aria-describedby="button-addon1">
+                      </div>
+            <div class="table-responsive">
+                <table class=" mt-2 table table-striped table-bordered table-sm">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Salary</th>
+                            <th>Anual Salary</th>
+                            <th>Profile image</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="employees.length == 0">
+                            <td colspan="9" align="center">blank</td>
+                        </tr>
+                        <tr *ngFor="let empl of employees">
+                        <td class="table-primary">{{empl.id}}</td>
+                        <td class="table-primary">{{empl.employeeName}}</td>
+                        <td class="table-primary">{{empl.employeeAge}}</td>
+                        <td class="table-primary">{{empl.employeeSalary}}</td>                  
+                        <td class="table-primary">{{empl.yearSalary}}</td>
+                        <td class="table-primary">{{empl.profileImage}}</td>
+                        <td>
+                            <button
+                                class="btn btn-info btn-sm ml-2" (click)="getDetails(empl)">Details</button>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
