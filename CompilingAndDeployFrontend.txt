@@ -1,0 +1,9 @@
+Comandos para construir imagen docker:
+
+docker build -t frontend . # ejecutar este comando en la carpeta base donde se encuentra el archivo Dockerfile
+
+docker run  -p 80:80 frontend #con este comando corremos la imagen docker la cual crea una instancia de nginx
+
+corriendo estos comandos ya podemos verificar que la aplicacion está funcionando en el puerto 80
+
+tener en cuenta que primero tenemos que iniciar el backend
